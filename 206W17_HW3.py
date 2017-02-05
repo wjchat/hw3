@@ -20,6 +20,16 @@ import re
 
 ## Write code to define your parse_counted_words function here.
 
+def parse_counted_words(sample):
+    
+    tup = re.findall('(\d+)\s?(\S[a-zA-Z]+)', sample)
+    
+    
+    if tup:
+        return(tup[-1])
+    else:
+        return None
+
 
 
 
@@ -36,7 +46,7 @@ import re
 ## (d) Write Python code to determine how many of these paths describe a Microsoft file (a file that EITHER ends with .docx OR .xlsx, but nothing else counts) where the file name ends in a digit. Save that total in the variable microsoft_files_num.
 
 
-
+f = open('computer_paths.txt')
 
 
 

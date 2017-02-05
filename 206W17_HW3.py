@@ -47,6 +47,32 @@ def parse_counted_words(sample):
 
 
 f = open('computer_paths.txt')
+file_paths_num = 0
+full_paths_num = 0
+python_course_paths = 0
+microsoft_files_num = 0
+
+for line in f:
+    line = line.rstrip()
+   
+    if re.findall('^[/User|~]', line): #finds paths that start with /Users or ~
+        full_paths_num += 1
+
+    if re.findall('\.\w+$', line): #finds any string that ends in .(anything)
+        file_paths_num += 1
+
+    if re.findall('SI206/\w+.py$', line): #finds python files in /SI206
+        python_course_paths += 1
+
+    if re.findall('\d\.[xlsx|docx]', line): #finds microsoft files that end in a number
+        microsoft_files_num += 1
+
+
+
+
+    
+
+
 
 
 
